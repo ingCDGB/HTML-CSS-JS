@@ -1,0 +1,440 @@
+ETIQUETAS DE SECCIÓN (BLOQUES)
+
+    body:
+        Contenido de la página
+    article:
+        Contenido dentro de una sección. Debe tener
+        un encabezado.
+    h1-h6:
+        Títulos
+    section:
+        Divide bloque de contenido
+    aside:
+        Contenido relacionado con el contenido
+        principal
+    header:
+        Cabecera de un bloque de contenido
+    footer:
+        Pie de bloque de contenido
+    nav:
+        Enlaces de navegación de la página
+
+
+IMPORTANTE: - tener etiqueta link con icon
+            - No se puede utilizar un h2 sin 
+            un h1
+            - Es importante la semantica de las
+            etiquetas.
+
+Ejemplo:
+    ARTICULO
+        <body>
+            <h1>H1</h1>
+            <article>
+                <h2>H2</h2>
+                <section>
+                    <h3>H3</h3>
+                    <p>
+                        texto
+                    </p>
+                </section>
+            </article>
+        </body>
+    MENU
+        <body>
+            <header>
+                <nav>
+                    <span>menu 1</span>
+                    <span>menu 2</span>
+                </nav>
+            </header>
+        </body>
+    
+ETIQUETAS SEMANTICAS A NIVEL DE texto
+
+    a: 
+        link
+    em:
+        énfasis de su contenido (para navegador)
+    strong:
+        texto gran importancia (para el navegador)
+    small:
+        contenidos secundarios
+    cite:
+        referencia a un trabajo
+    q:
+        frase citada de otra fuente (1 linea)
+    code:
+        fragmento código
+    sub:
+        subíndice
+    sup:
+        superíndice
+    span:
+        no significa nada, se utiliza con CSS
+    br:
+        salto de línea (obligado)
+    wbr:
+        salto de linea opcional. (lo decide navegador)
+
+Importancia de las etiquetas
+    texto  
+        normal: 0
+        con em: 1
+        con strong: 2
+
+Ejemplo de cita
+    <body>
+    <p>
+        Tyrion Lannister said in
+        <cite>Game of Thrones</cite>
+        <q>
+            The power riside where the man
+            believe it's riside
+        </q>
+    </p>
+    </body>
+
+CONTENIDO EMBEBIDO
+
+    img:
+        <img src="ruta" alt="sirve para el navegador posicionar"
+    audio:
+        <audio src="ruta" controls muted></audio>
+    video:
+        <video src="ruta" controls muted poster="imagen.png"></video>
+    Iframe:
+        <iframe src="ruta" allowfullscreen></iframe>
+
+ATRIBUTOS
+
+    básicos:
+        se utilizan practicamente en todas las etiquetas
+    internacionalización:
+        pág con contenido en varios idiomas
+    eventos:
+        solo en pág web dinámicas creadas con JS
+    foco:
+        relacionado con accesibilidad de sitios web
+    personalizados:
+        deben empezar por data-{nombre}
+
+    Lista:
+        class:
+        id:
+        role: 
+        style: propiedades CSS (no recomendado)
+        lang: lenguaje
+        dir: auto, ltr, rtl
+        onClick: evento
+        foco:
+        links (a) -> download: descargar img
+
+ETIQUETAS NUEVAS en HTML 5.2
+<body>
+    <details>
+        <summary> titulo </summary>
+        <p>contenido</p>
+    </details>
+
+    <dialog open> el atriuto open se maneja con JS
+        <h1>modal</h1>
+        <p>contenido</p>
+    </dialog>
+</body>
+
+ETIQUETAS OBSOLETAS
+    cronym
+    applet
+    basefont
+    big
+    blink
+    center
+    bgsound
+    command
+    content
+    direlement
+
+
+ENLACES Y TIPO DE RUTAS
+
+    TIPOS:
+        absolutas: 
+            únicas y siempre van a mismo archivo
+
+        relativas:
+            están en relación a la ubicación del archivo
+
+    NOTA
+        carpeta raiz /
+        carpeta padre ../
+
+
+MARCADORES Y/O ANCLAS
+
+
+Asignar un ID a la sección y en la etiqueta <a> 
+el href = "#{id_seccion}"
+
+
+TABLAS
+    muestra datos tabulados
+
+    tablas se basan en filas
+
+    Etiquetas:
+        <table>tabla</table>
+        <tr>table row</tr>
+        <td>table data</td>
+
+    Partes de una tabla
+        thead: Cabecera
+        tbody: cuerpo
+        tfoot: pie 
+
+    Atributos de celda
+        colspan: fusiona columnas (horizontal)
+        rowspan: fusiona filas (vertical)
+
+    Ejemplo
+    <body>
+        
+        <table>
+            <caption>table title</caption>
+
+            <colgroup>
+                <col span="# col a ocupar">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>header</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>body</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>foot</td>
+                </tr>
+            </tfoot>
+            
+        </table>
+
+    </body>
+
+
+FORMULARIOS I
+    Enviar formulario:
+        Opc 1:
+            backend 
+        Opc 2:
+            front con javascript
+    Etiquetas principales
+        form 
+        label 
+        input 
+        select 
+        textarea
+        datalist 
+    
+
+    INPUTs:
+        formas de vincular el label con el input
+        1) <label> name <input> </label>
+
+        Lo más común
+        2) <label for="{el nombre}}"> name </label>
+            <input id="{el nombre}"
+
+    Botones:
+        1) <input type="submit" value="nombre">
+
+        2) <input type="image" ssrc="">
+
+        3)  <button> {text} </button>
+
+    Radio button
+        para vincularlos deben tener el mismo nombre
+        
+        {nombre} => vincula los radio buttons
+
+        <input type="radio" name="{nombre}">
+        <input type="radio" name="{nombre}">
+
+NOTA: con <legend> {text} </legend> titulos los INPUTs
+
+    CHECK BOX
+        se puede seleccion 0,1 ó + check BOX
+
+        <input type="checkbox" name="{nombre}">
+        <input type="checkbox" name="{nombre}">
+
+    DATE
+        
+        <input type="date" name="{nombre}">
+        <input type="time" name="{nombre}">
+        <input type="month" name="{nombre}">
+        <input type="week" name="{nombre}">
+
+    COLOR 
+        <input type="color">
+
+    EMAIL
+        <input type="email">
+
+    FILE
+        <input type="file">
+    
+    RANGE
+        <input type="range" min="0" max="50" step="5">
+    
+    SEARCH
+        <input type="search">
+    
+    TEL 
+        <input type="tel">
+    
+    LIST 
+        <input list="{nombre}">
+        <datalist id="{nombre}">
+            </option value="{val1}">
+            </option value="{val2}">
+        </datalist>
+    
+    SELECT 
+    multiple para seleccionar varios
+        <select name="" id="" multiple>
+            <optgroup>
+                <option value="{val1}">{text}</option>
+                <option value="{val2}">{text}</option>
+            </optgroup>
+            <option value="{val3}">{text}</option>
+            <option value="{val4}">{text}</option>
+        </select>
+
+        TEXTAREA 
+            <textarea name="" id="" cols="x" rows="y"> </textarea>
+
+        FIELDSET
+        Agrupa datos
+            <fieldset>
+                <legend> {text} </legend>
+                <label></label>
+                <input> 
+            </fieldset>
+
+        ATRIBUTOS (validar en servidor)
+            BOOLEAN
+                require: 
+                    valida que no sea vacio o nulo
+                disabled:
+                    desactiva
+                checked:
+                    marca un radio|checkbox por defecto
+                selected:
+                    marca un option por defecto
+                autofocus:
+                    pone foco automatico a un campo
+                readonly:
+                    campo solo de lectura
+            OTROS
+                maxlenght/minlenght:
+                    caracteres
+                min/max:
+                    numericos
+                autocomplete=on|off:
+                    va en al etiqueta form, 
+                    permite al navegador autocompletar datos
+                placeholder:
+                    muestra un valor de ejemplo
+
+IMÁGENES DINÁMICAS 
+            
+    cuando se quiere ajustar la imagen a un
+    dispositivo especifico se utiliza el 
+    atributo srcset="ruta"
+
+    si el navegador no soporta srcset entonces tenemos
+    src para ponerl a imagen
+    <img src="ruta" alt="desc" srcset="rutas">
+
+    rutas = grupo de imagenes separadas por ',' 
+
+    NOTA:
+        puedes indicarle el PIXEL RATIO o 
+
+        el ancho de la imagen (1024w) -> esto 
+        quiere decir que: SI EL VIEWPORT es 
+        menor a 1024 utiliza esa imagen
+    
+    <img src="" alt="desc" srcset="
+    img1.png 1x,
+    img2.png 2x,
+    img3.png 4x
+    ">
+
+    CONCEPTO IMPORTANTE
+
+    DEVICE PIXEL RATIO
+        relacion de aspecto entre los pixeles de la web y los reales
+        PIXEL FISICO: son los que estan en la pantalla
+        PIXEL LOGICO: no tiene dimensiones específicas
+            sino que están establecidas por software
+
+        En un dispositivo con PIXEL RATIO = 1 
+        significa que el pixel logico ocupa lo mismo 
+        que pixel fisico 
+
+META VIEWPORT 
+
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+
+    width:
+        estable ancho de la web, puede ser una medida 
+        o device-width
+
+    initial-scale: 
+        establece escala inicial de la web
+    
+    maximun-scale:
+        establece escala maxima
+    minimun-scale:
+        establece escala minima
+
+     user-scalable: (yes o no) responsive
+        establece si el usuario puede o no hacer zoom
+        
+OPEN GRAH PROTOCOL (FACEBOOK) / TWITTER CARD
+
+    <html lang="es" prefix="og:http://ogp.me/ns/website#"
+
+    se utilizan normalmente juntos 
+
+
+APIs HTML5
+
+    suelen consumirse a traves de javascript
+
+    <CANVAS>
+        dibujo 2D y 3D... incluso video juegos
+    
+    indexedDB
+        local storage / session storage
+
+    FILE
+        leer carpetas y archivos
+
+    Geolocation
+        ubicar por GPS
+
+    Drag & Drop
+
+    pug 
+        motor de plantilla basado en javascrip
